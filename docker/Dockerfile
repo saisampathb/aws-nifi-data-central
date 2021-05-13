@@ -85,12 +85,15 @@ VOLUME ${NIFI_LOG_DIR} \
 RUN echo "#!/bin/sh\n" > $NIFI_HOME/bin/nifi-env.sh
 
 #copy required libs and flow.xml.gz
-COPY ./flow.xml.gz /opt/nifi/nifi-current/conf
-COPY  ./postgresql-42.2.20.jar /opt/nifi/nifi-current/lib
+#ADD ./flow.xml.gz /opt/nifi/
+#ADD  ./postgresql-42.2.20.jar /opt/nifi/
 
-#RUN chown nifi:nifi /opt/nifi/nifi-current/conf/flow.xml.gz
-#RUN chown nifi:nifi /opt/nifi/nifi-current/lib/postgresql-42.2.20.jar
+#copy required libs and flow.xml.gz
+COPY --chown=nifi ./flow.xml.gz /opt/nifi/nifi-current/conf
+COPY  --chown=nifi ./postgresql-42.2.20.jar /opt/nifi/nifi-current/lib
 
+#RUN mv /opt/nifi/flow.xml.gz /opt/nifi/nifi-current/conf
+#RUN mv /opt/nifi/postgresql-42.2.20.jar /opt/nifi/nifi-current/lib
 
 # Web HTTP(s) & Socket Site-to-Site Ports
 EXPOSE 8080 8443 10000 8000
