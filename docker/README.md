@@ -8,7 +8,7 @@ The working project URL can be accessed at [https://sampathcodes.com:8080/nifi](
 
 **Architecture Diagram** :
 
-![Architecture ](architecture_diagram.png)
+<img width="492" alt="architecture_diagram" src="https://user-images.githubusercontent.com/55593893/124603972-0cbee180-de9d-11eb-8b1a-169b4f8d6de8.png">
 
 **Directory Structure** :
 
@@ -25,4 +25,4 @@ Dockerfile | Contains the definition of NiFi Dockerfile to be built deploy the  
 4. The solution is cloud-agnostic because the NiFi container Image can be deployed to any Cloud services provider or can be run on an on-premise server with docker.
 
 
-<img width="492" alt="architecture_diagram" src="https://user-images.githubusercontent.com/55593893/124603972-0cbee180-de9d-11eb-8b1a-169b4f8d6de8.png">
+
